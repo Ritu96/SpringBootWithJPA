@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.UUID;
 import org.springframework.stereotype.Repository;
 import com.example.springbootjpa.model.Person;
+import com.example.springbootjpa.request.PersonRequest;
 
 @Repository("personDao")
 public class PersonDaoImpl implements PersonDao {
@@ -18,8 +19,8 @@ public class PersonDaoImpl implements PersonDao {
 	}
 
 	@Override
-	public int insertPerson(UUID id, Person person) {
-		DB.add(new Person(id, person.getName()));
+	public int insertPerson(UUID id, PersonRequest personRequest) {
+		DB.add(new Person(id, personRequest.getName()));
 		return 0;
 	}
 

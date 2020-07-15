@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import com.example.springbootjpa.dao.PersonDao;
 import com.example.springbootjpa.model.Person;
+import com.example.springbootjpa.request.PersonRequest;
 
 @Service
 public class PersonService {
@@ -18,8 +19,8 @@ public class PersonService {
 		this.personDao=personDao;
 	}
 	
-	public int addPerson(Person person) {
-		return personDao.insertPerson(person);
+	public int addPerson(PersonRequest personRequest) {
+		return personDao.insertPerson(personRequest);
 	}
 	
 	public Person getPerson(String id) {
